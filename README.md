@@ -1,10 +1,10 @@
 # dotfiles
 
 # Requeriments
-
 [Vundle](https://github.com/gmarik/Vundle.vim)
 [git](https://git-scm.com/)
-[prettier]`npm install -g prettier`
+`npm install -g prettier`
+`aurman -S nerd-fonts-complete-mono-glyphs`
 
 ```
 aurman -S nerd-fonts-complete
