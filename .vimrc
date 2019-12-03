@@ -21,6 +21,20 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'Valloric/YouCompleteMe'
 
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" JS PLUGINS
+Plugin 'prettier/vim-prettier'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+" color schema
+Plugin 'mhartington/oceanic-next'
+Plugin 'ryanoasis/vim-devicons'
+
+Plugin 'Shougo/unite'
+
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " All of your Plugins must be added before the following line
@@ -31,13 +45,20 @@ filetype plugin on    " required
 
 " Color scheme
 syntax enable
-colorscheme stereokai
-" colorscheme monokai
+colorscheme OceanicNext
+
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 
 " Line counter
 set number
 " No wrap
 set nowrap
+set encoding=UTF-8
+
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " set up indentation
 filetype plugin indent on
@@ -158,7 +179,28 @@ augroup resCur
 augroup END
 
 " ALE
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {'python': ['flake8'], 'javascript': ['eslint', 'prettier'], 'typescript': ['prettier', 'tslint']}
 " pip install black
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['isort', 'black']}
 let g:ale_fix_on_save = 1
+
+" CONFIG JS FORMAT
+let g:prettier#autoformat = 0
+" let g:prettier#quickfix_enabled = 1
+let g:prettier#quickfix_auto_focus = 1
+let g:prettier#config#print_width = 80
+let g:prettier#config#tab_width = 2
+let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#semi = 'true'
+let g:prettier#config#single_quote = 'false'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#trailing_comma = 'none'
+
+" JS Linter
+let g:jsx_ext_required = 1
+let g:jsx_pragma_required = 1
+
+let g:airline_theme='oceanicnext'
+
+set guifont=DroidSansMono\ Nerd\ Font\ 11
