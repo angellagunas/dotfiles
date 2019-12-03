@@ -3,12 +3,16 @@
 # Requeriments
 
 [Vundle](https://github.com/gmarik/Vundle.vim)
-[Vim](https://www.vim.org/download.php)
+[git](https://git-scm.com/)
+[prettier]`npm install -g prettier`
 
 ```
-sudo apt-get install vim
+aurman -S nerd-fonts-complete
 rm -rf ~/.vim
 mkdir ~/.vim
-mv ./vimrc .vim/vimrc
-cd .vim && ln -s ~/.vim/.vimrc ~/.vimrc
+cp ./.vimrc ~/.vim
+cp ./colors ~/.vim/colors -r
+cd ~/.vim && ln -s ~/.vim/.vimrc ~/.vimrc
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 ```

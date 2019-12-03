@@ -15,15 +15,11 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-pathogen'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
-" Bundle 'wavded/vim-stylus'
-" Bundle 'scrooloose/syntastic'
 Bundle 'dense-analysis/ale'
 
 Plugin 'jiangmiao/auto-pairs'
-" Plugin 'mattn/emmet-vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'Valloric/YouCompleteMe'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
